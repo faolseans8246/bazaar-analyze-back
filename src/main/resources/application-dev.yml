@@ -1,0 +1,58 @@
+server:
+  port: 1972
+
+spring:
+
+#  NoQSL
+#  data:
+#    mongodb:
+#      host: 27017
+#      database: mongotoken
+#      username: tokenmongo
+#      password: tokenmongo
+
+# SQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/bazaar_analyze
+    username: root
+    password: faolseans8246
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      pool-name: MyHikariCP
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  main:
+    allow-bean-definition-overriding: true
+
+#  thmeleaf bila ishlash qismi
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  web:
+    resources:
+      add-mappings: true
+      static-locations: classpath:/static/
+
+# Security
+  security:
+    user:
+      name: login
+      password: parol
+
+
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+# Swagger bilan ishlash qismi
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
