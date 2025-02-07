@@ -32,7 +32,10 @@ public class SecurityConf {
                             auth.requestMatchers(
                                     "/**",
                                     "/api/auth/save",
-                                    "api/auth/login"
+                                    "api/auth/login",
+                                    "/api/weather/**",
+                                    "/api/locations/address",
+                                    "/api/population/world"
                             ).permitAll();
 
                             // Swagger permitions
