@@ -16,10 +16,8 @@ public class WeatherService {
     private final RestTemplate restTemplate;
 
     public String getWeatherData(double lat, double lon) {
-        // API URL'ni query parametrlar bilan birga to'ldirish
         String url = API_URL + "?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY + "&units=metric";
 
-        // RESTful so'rov yuborish va javobni olish
         return restTemplate.getForObject(url, String.class);
     }
 

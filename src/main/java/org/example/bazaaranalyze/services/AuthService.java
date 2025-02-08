@@ -18,7 +18,6 @@ public class AuthService {
     private final AuthRepos signupRepos;
     private final JwtTokenProvider jwtTokenProvider;
 
-    // Ilovada foydalanuvchi qismini yaratish qsimini shakllantirish
     public ApiResponse signup(SignupDto signupDto) {
 
         SignupBase signupBase = new SignupBase();
@@ -47,7 +46,6 @@ public class AuthService {
     }
 
 
-    // Ilovada foydalanuvchini kirish huquqini shakllantirish
     public ApiResponse login(LoginDto loginDto) {
         SignupBase signupBase = signupRepos.findByUsernameOrEmail(loginDto.getUsername(), loginDto.getUsername()).orElse(null);
 

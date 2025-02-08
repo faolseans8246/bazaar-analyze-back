@@ -10,7 +10,6 @@ weather:
   api:
     key: 522c2096ae616aecea1e0f75e299ab2f
 
-# populatsiya api
-population:
-  api:
-    key: 1a792cd66mshcc882743df9f3c9p155a1ejsn45a2d38dde05
+world:
+  population:
+    key: 81a792cd66mshcc882743df9f3c9p155a1ejsn45a2d38dde05

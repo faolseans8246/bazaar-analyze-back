@@ -11,18 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/api/population")
-@CrossOrigin(origins = "http://localhost:3000")
+@RequiredArgsConstructor
+@CrossOrigin(origins = "https://localhost:3000")
 public class WorldPopulationController {
 
     private final WorldPopulationService worldPopulationService;
 
-
     @GetMapping("/world")
-    public ResponseEntity<ApiResponse> populations() {
-        ApiResponse apiResponse = worldPopulationService.getWorldPopulation();
+    public ResponseEntity<ApiResponse> getWorldPopulation() {
+        ApiResponse response = worldPopulationService.getWorldPopulation();
 
-        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.OK : HttpStatus.INTERNAL_SERVER_ERROR).body(apiResponse);
+        return ResponseEntity.status(response.isSuccess() ? HttpStatus.OK : HttpStatus.INTERNAL_SERVER_ERROR).body(response);
     }
 }

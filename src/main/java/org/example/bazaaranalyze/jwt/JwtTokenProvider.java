@@ -23,8 +23,6 @@ public class JwtTokenProvider {
                 .compact();
     }
 
-    // Valid token
-
     // Check token
     public boolean validateToken(String token) {
         try {
@@ -34,8 +32,4 @@ public class JwtTokenProvider {
             return false;
         }
     }
-
-    // Use token
-
-    // Get token in User
 }
