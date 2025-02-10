@@ -35,7 +35,8 @@ public class SecurityConf {
                                     "api/auth/login",
                                     "/api/weather/**",
                                     "/api/locations/address",
-                                    "/api/population/world"
+                                    "/api/population/world",
+                                    "/api/currency/all"
                             ).permitAll();
 
                             // Swagger permitions
