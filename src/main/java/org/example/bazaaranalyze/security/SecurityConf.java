@@ -36,7 +36,12 @@ public class SecurityConf {
                                     "/api/weather/**",
                                     "/api/locations/address",
                                     "/api/population/world",
-                                    "/api/currency/all"
+                                    "/api/currency/all",
+                                    "/api/currency/global",
+                                    "/api/news/daily",
+                                    "/api/crypt/btc",
+                                    "/api/crypt/eth"
+
                             ).permitAll();
 
                             // Swagger permitions
