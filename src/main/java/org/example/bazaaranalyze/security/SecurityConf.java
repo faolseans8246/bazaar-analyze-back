@@ -42,7 +42,9 @@ public class SecurityConf {
                                     "/api/crypt/btc",
                                     "/api/crypt/eth",
                                     "/api/combinant/metalls",
-                                    "/api/calculate/rates"
+                                    "/api/calculate/rates",
+                                    "/api/transaction/**",
+                                    "/api/cards/**"
 
                             ).permitAll();
 
