@@ -15,6 +15,10 @@ world:
   population:
     key: 81a792cd66mshcc882743df9f3c9p155a1ejsn45a2d38dde05
 
+  bank:
+    api:
+      key:
+
 # global trading API
 api:
   exchangerates:
@@ -29,4 +33,12 @@ daily:
 crypto:
     api:
       key: 40c35aeb-f9ee-4d50-818d-140f6052706b
+
+# Combinant API key
+combinant:
+  api:
+    key: c9bff330a58fc12cbf7932527578e486
+
+# Jahon banki
+
 

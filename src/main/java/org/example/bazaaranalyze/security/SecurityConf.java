@@ -40,7 +40,9 @@ public class SecurityConf {
                                     "/api/currency/global",
                                     "/api/news/daily",
                                     "/api/crypt/btc",
-                                    "/api/crypt/eth"
+                                    "/api/crypt/eth",
+                                    "/api/combinant/metalls",
+                                    "/api/calculate/rates"
 
                             ).permitAll();
 
