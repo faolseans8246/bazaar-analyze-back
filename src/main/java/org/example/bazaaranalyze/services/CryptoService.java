@@ -16,7 +16,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class CryptoService {
 
-    private static final String CRYPTO_API_URL = "https://rest.coinapi.io/v1/assets/";
+    private static final String CRYPTO_API_URL = "https://rest.coinapi.io/v1/exchangerate/";
 
     @Value("${crypto.api.key}")
     private String API_KEY;

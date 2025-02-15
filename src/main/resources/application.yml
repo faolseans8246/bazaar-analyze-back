@@ -15,9 +15,6 @@ world:
   population:
     key: 81a792cd66mshcc882743df9f3c9p155a1ejsn45a2d38dde05
 
-  bank:
-    api:
-      key:
 
 # global trading API
 api:
@@ -32,7 +29,7 @@ daily:
 # crypto API key
 crypto:
     api:
-      key: 40c35aeb-f9ee-4d50-818d-140f6052706b
+      key: a345ee8c-af1b-4198-a1bf-9af6fc0460b1
 
 # Combinant API key
 combinant:

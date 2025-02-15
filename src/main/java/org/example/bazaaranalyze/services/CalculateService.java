@@ -5,43 +5,35 @@ import org.example.bazaaranalyze.payload.ApiResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
 public class CalculateService {
 
-    public ApiResponse getCalculate(String fromCurrency, String toCurrency) {
+    public ApiResponse getCalculate(String fromCurrency, String toCurrency, double amount) {
         RestTemplate restTemplate = new RestTemplate();
         String EXTERNAL_API_URL = "https://api.exchangerate-api.com/v4/latest/";
-        String url = String.format("%s/%s", EXTERNAL_API_URL, fromCurrency);
+        String url = String.format("%s%s", EXTERNAL_API_URL, fromCurrency);
 
         try {
-            ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-
+            ResponseEntity<Map> response = restTemplate.getForEntity(url, Map.class);
             if (response.getStatusCode().is2xxSuccessful()) {
-                String responseBody = response.getBody();
-                double rate = extractRateFromJson(responseBody, toCurrency);
+                Map<String, Object> rates = (Map<String, Object>) response.getBody().get("rates");
+                if (rates.containsKey(toCurrency)) {
+                    double rate = Double.parseDouble(rates.get(toCurrency).toString());
+                    double convertedAmount = amount * rate;
 
-                if (rate > 0) {
-                    return new ApiResponse("Ma'lumotlar muvaffaqiyatli olindi!", true, rate);
+                    return new ApiResponse("Hisoblash muvaffaqiyatli bajarildi!", true,
+                            Map.of("convertedAmount", convertedAmount, "rate", rate));
                 } else {
-                    return new ApiResponse("Kurs ma'lumotlari noto'g'ri!", false, null);
+                    return new ApiResponse("Valyuta kursi topilmadi!", false, null);
                 }
             } else {
-                return new ApiResponse("Ma'lumotlar olinmadi!", false, null);
+                return new ApiResponse("API javobi noto‘g‘ri!", false, null);
             }
         } catch (Exception e) {
-            return new ApiResponse("Xatolik yuz berdi!", false, null);
+            return new ApiResponse("Server xatosi: " + e.getMessage(), false, null);
         }
     }
-
-    private double extractRateFromJson(String json, String toCurrency) {
-        try {
-            org.json.JSONObject jsonObject = new org.json.JSONObject(json);
-            return jsonObject.getJSONObject("rates").getDouble(toCurrency);
-        } catch (Exception e) {
-            return 0;
-        }
-    }
-
 }

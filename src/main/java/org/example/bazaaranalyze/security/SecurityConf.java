@@ -28,7 +28,6 @@ public class SecurityConf {
                 .authorizeHttpRequests(
                         auth -> {
 
-                            // Main permitions
                             auth.requestMatchers(
                                     "/**",
                                     "/api/auth/save",
@@ -63,7 +62,6 @@ public class SecurityConf {
                                     "/swagger-ui.html/**"
                             ).permitAll();
 
-                            // for another actions
                             auth.anyRequest().authenticated();
                         }
                 );

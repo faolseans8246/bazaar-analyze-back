@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/calculate")
@@ -16,9 +18,14 @@ public class CalculateController {
     private final CalculateService calculateService;
 
     @GetMapping("/rates")
-    public ResponseEntity<ApiResponse> calculateRate(@RequestParam String from, @RequestParam String to) {
-        ApiResponse apiResponse = calculateService.getCalculate(from, to);
+    public ResponseEntity<ApiResponse> calculateRate(
+            @RequestParam String from,
+            @RequestParam String to,
+            @RequestParam double amount) {
 
-        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.OK : HttpStatus.INTERNAL_SERVER_ERROR).body(apiResponse);
+        ApiResponse apiResponse = calculateService.getCalculate(from, to, amount);
+
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.OK : HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(apiResponse);
     }
 }
