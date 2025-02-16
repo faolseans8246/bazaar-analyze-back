@@ -10,7 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000")  // Frontend uchun manzil
+                .allowedOrigins("https://bazaar-analyze-front.vercel.app")  // Frontend uchun manzil
                 .allowedMethods("GET", "POST", "PUT", "DELETE")  // Foydalanishga ruxsat berilgan metodlar
                 .allowedHeaders("*")  // Barcha so'rov sarlavhalariga ruxsat
                 .allowCredentials(true);

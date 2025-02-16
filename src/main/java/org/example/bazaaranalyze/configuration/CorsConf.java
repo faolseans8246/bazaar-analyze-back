@@ -14,7 +14,7 @@ public class CorsConf {
             @Override
             public void addCorsMappings(CorsRegistry corsRepos) {
                 corsRepos.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000")
+                        .allowedOrigins("https://bazaar-analyze-front.vercel.app")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowCredentials(true);
             }

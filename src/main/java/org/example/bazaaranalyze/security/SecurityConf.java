@@ -72,7 +72,7 @@ public class SecurityConf {
                 .cors(cors -> cors.configurationSource(request -> {
                     var corsConfig = new org.springframework.web.cors.CorsConfiguration();
 //                    corsConfig.addAllowedOrigin("https://birthday-frontend-d8395a6906eb.herokuapp.com"); // Frontend manzili
-                    corsConfig.addAllowedOrigin("https://bazaar-analyze-front.vercel.app/"); // Frontend manzili
+                    corsConfig.addAllowedOrigin("https://bazaar-analyze-front.vercel.app"); // Frontend manzili
                     corsConfig.addAllowedMethod("*"); // Barcha metodlarga ruxsat berish
                     corsConfig.addAllowedHeader("*"); // Barcha headerlarga ruxsat berish
                     corsConfig.setAllowCredentials(true); // Credentiallarni ruxsat berish
