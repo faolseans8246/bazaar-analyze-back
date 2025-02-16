@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/combinant")
-@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app/")
+@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app")
 public class CombinantController {
 
     private final CombinantService combiantService;

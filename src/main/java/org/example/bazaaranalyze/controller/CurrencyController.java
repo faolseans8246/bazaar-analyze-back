@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/currency")
-@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app/")
+@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app")
 public class CurrencyController {
 
     private final CurrencyService currencyService;

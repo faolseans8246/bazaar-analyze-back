@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/news")
-@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app/")
+@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app")
 public class NewsController {
 
     private final NewsService newsService;
