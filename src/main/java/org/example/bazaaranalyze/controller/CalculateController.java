@@ -12,7 +12,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/calculate")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app/")
 public class CalculateController {
 
     private final CalculateService calculateService;

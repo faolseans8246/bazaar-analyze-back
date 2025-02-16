@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/crypt")
-@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
+@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app/", allowedHeaders = "*")
 public class CryptoController {
 
     private final CryptoService cryptoService;

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/locations")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app/")
 public class LocationController {
 
     private final LocationService locationService;

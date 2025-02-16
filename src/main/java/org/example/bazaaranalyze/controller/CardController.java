@@ -14,7 +14,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/cards")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app/")
 public class CardController {
 
     private final CardService cardService;

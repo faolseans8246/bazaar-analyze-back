@@ -12,7 +12,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/transaction")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://bazaar-analyze-front.vercel.app/")
 public class TransactionController {
 
     private final TransactionService transactionService;

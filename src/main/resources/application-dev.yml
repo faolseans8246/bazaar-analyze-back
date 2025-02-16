@@ -1,5 +1,5 @@
 server:
-  port: 1972
+  port: ${PORT:1972}
 
 spring:
 
@@ -13,9 +13,9 @@ spring:
 
 # SQL
   datasource:
-    url: jdbc:mysql://localhost:3306/bazaar_analyze
-    username: root
-    password: faolseans8246
+    url: jdbc:postgresql://cc0gj7hsrh0ht8.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com/d8qk4kskekgsiu
+    username: u8baa4s0082rud
+    password: pb268781a577bbe651841507986d6e9aa31038bd0489efc82bab0c5e6a50b0043
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       maximum-pool-size: 10
